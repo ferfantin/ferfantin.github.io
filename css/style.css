@@ -5,7 +5,7 @@
   --color-modal-shadow: #37283956;
 
   --color-text-white: #b2a0d0;
-  --color-text-dim: #7c6d95;
+  --color-text-dim: #9078b8;
   --color-text-title: #ba91e6;
   --color-text-accent: #cfd1b5;
   --color-text-link: #79b1ff;
@@ -19,8 +19,6 @@
   --font-title: 1.4em;
   --font-title-large: 1.6em;
   --font-description: 1.0em;
-  --font-card: 1.3em;
-  --font-card-large: 2.0em;
 
   --card-opacity: 0.7;
   scroll-behavior: smooth;
@@ -78,7 +76,9 @@ body {
 
 .card {
   position: relative;
-  height: 100%;
+  font-size: var(--font-card);
+  height: auto;
+  width: auto;
   cursor: pointer;
   opacity: 1;
   transition: 0.3s;
@@ -87,29 +87,18 @@ body {
 .cardBG {
   object-fit: cover;
   height: 100%;
+  width: 100%;
 }
 
 .cardImg {
   position: absolute;
-  margin: 20%;
-  margin-top: 20%;
   width: 60%;
-  mix-blend-mode: lighten;
-  align-self: center;
-  object-fit: contain;
+  left: 0;
+  right: 0;
+  margin-top: 20%;
+  margin-left: auto;
+  margin-right: auto;
   opacity: var(--card-opacity);
-}
-
-.cardTitle {
-  position: absolute;
-  font-family: "New Rocker", system-ui;
-  bottom: 23%;
-  left: 0px;
-  right: 0px;
-  text-align: center;
-  font-size: var(--font-card);
-  color: var(--color-text-card);
-  font-weight: 500;
 }
 
 .card-wrapper {
@@ -341,7 +330,7 @@ body {
   }
 
   .card-wrapper {
-    padding: 20px;
+    padding: 40px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -349,17 +338,9 @@ body {
     height: auto;
   }
 
-  .cardTitle {
-    font-size: var(--font-card-large);
-  }
-
-  .homeImage {
-    width: 100%;
-    max-width: 500px;
-  }
 
   .modalTriggerContainer {
-    padding: 20px;
+    padding: 40px;
     flex-direction: column;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -367,8 +348,8 @@ body {
 
   .textbox,
   .textboxLarge {
-    max-width: 900px;
-    padding: 20px;
+    max-width: 100%;
+    padding: 40px;
   }
 }
 
