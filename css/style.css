@@ -359,6 +359,7 @@ body {
   }
 
   .modalTriggerContainer {
+    padding: 20px;
     flex-direction: column;
     margin-top: 0px;
     margin-bottom: 0px;
