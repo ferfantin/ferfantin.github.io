@@ -1,157 +1,284 @@
 :root {
-  --bg-color: #121021;
-  --bg-darker-color: #0e0e18;
-  --footer-color: #1c1935;
-  --main-text-color: #96b3fd;
-  --box-color: #1c1935;
+  --color-bg: #38273f;
+  --color-bg-bright: #543c87;
 
-  --font-menu: 1.1rem;
-  --font-footer: 0.8rem;
-  --font-title: 1.6rem;
-  --font-label: 1.1rem;
-  --font-description: 1.1rem;
+  --color-modal-shadow: #37283956;
 
+  --color-text-white: #b2a0d0;
+  --color-text-dim: #7c6d95;
+  --color-text-title: #ba91e6;
+  --color-text-accent: #cfd1b5;
+  --color-text-link: #79b1ff;
+  --color-text-card: #F4E8BA;
+
+  --color-bg-menu: rgba(0, 0, 0, 0.347);
+  --color-bg-menu-sticky: rgba(22, 18, 16, 0.536);
+
+  --font-legend: 0.7em;
+  --font-footer: 0.8em;
+  --font-title: 1.4em;
+  --font-title-large: 1.6em;
+  --font-description: 1.0em;
+  --font-card: 1.3em;
+  --font-card-large: 2.0em;
+
+  --card-opacity: 0.7;
   scroll-behavior: smooth;
 }
 
-.company {
-  height: 30px;
-  margin-right: 20px;
+#particles-js {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -10;
+  top: 0;
+  left: 0;
 }
 
 body {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "DM Mono", monospace;
   font-style: normal;
-  font-weight: normal;
-  color: var(--main-text-color);
-  background: var(--bg-color);
+  font-weight: 500;
+  font-size: var(--font-description);
+  color: var(--color-text-white);
+  background: linear-gradient(to bottom, var(--color-bg) 0%, var(--color-bg-bright) 100%);
+  background-attachment: fixed;
+  text-align: -webkit-center;
+  text-align: -moz-center;
   margin: 0;
+  padding-top: 3.5em;
 }
 
-.top-bar {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  background-color: var(--bg-color);
+.homeImage {
+  width: auto;
+  max-width: 320px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
-.wrapper-row {
-  width: 100%;
-  max-width: 1200px;
-  display: flex;
-  flex-direction: row;
+.imageContain {
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
-.wrapper-column {
-  width: 80%;
-  max-width: 1200px;
+.landingBG {
+  height: 80vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  background-image: url("../img/Fernanda/Fer-Darkness.jpg");
+  background-attachment: scroll;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.wrapper-quicklinks {
-  width: 100%;
-  max-width: 1200px;
-  display: flex;
-  flex-direction: row;
+.card {
+  position: relative;
+  height: 100%;
+  cursor: pointer;
+  opacity: 1;
+  transition: 0.3s;
 }
 
-.wrapper-cel {
-  width: 80%;
-  max-width: 1200px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+.cardBG {
+  object-fit: cover;
+  height: 100%;
+}
+
+.cardImg {
+  position: absolute;
+  margin: 20%;
+  margin-top: 20%;
+  width: 60%;
+  mix-blend-mode: lighten;
   align-self: center;
-  min-height: 70vh;
+  object-fit: contain;
+  opacity: var(--card-opacity);
 }
 
-.wrapper-cel-reverse {
-  width: 80%;
-  max-width: 1200px;
+.cardTitle {
+  position: absolute;
+  font-family: "New Rocker", system-ui;
+  bottom: 23%;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+  font-size: var(--font-card);
+  color: var(--color-text-card);
+  font-weight: 500;
+}
+
+.card-wrapper {
+  max-width: 760px;
+  height: 330px;
   display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.bg-wrapper {
+  max-width: 760px;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bg-wrapper-reverse {
+  max-width: 760px;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
   flex-direction: row-reverse;
-  align-items: center;
-  justify-content: space-between;
-  align-self: center;
-  min-height: 50vh;
 }
 
-.top-bar-left {
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.0em 0.5em;
+  background-color: var(--color-bg-menu);
+  transition: 0.3s all ease;
+}
+
+.header.active {
+  padding: 0.5em 0.5em;
+  font-weight: 500;
+  background-color: var(--color-bg-menu-sticky);
+  transition: 0.3s all ease;
+  z-index: 50;
+}
+
+.link-wrapper {
+  align-items: center;
+  max-width: 760px;
   display: flex;
-  margin: auto auto auto 0;
-  justify-content: left;
-  text-align: left;
-  padding-left: 10px;
-  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
 }
 
-.top-bar-right {
+.modal-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  row-gap: 2em;
+}
+
+.title {
+  font-family: "New Rocker", system-ui;
+  text-align: center;
+  font-size: var(--font-title);
+  color: var(--color-text-title);
+  font-weight: 500;
+}
+
+.titleBig {
+  font-family: "New Rocker", system-ui;
+  margin-bottom: 1.0em;
+  text-align: center;
+  font-size: var(--font-title-large);
+  color: var(--color-text-title);
+  font-weight: 500;
+}
+
+.description {
+  line-height: 1.5em;
+  text-align: left;
+  font-size: var(--font-description);
+}
+
+.dataRow {
+  line-height: 1.5em;
+  text-align: left;
+  font-size: var(--font-description);
   display: flex;
   flex-direction: row;
-  list-style-type: none;
-  text-align: right;
-  padding-right: 10px;
 }
 
-.quickLink:visited,
-.quickLink:link,
-.quickLink:active {
-  font-family: 'Josefin Sans', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  color: var(--main-text-color);
-  background: none;
-  border-style: solid;
-  border-width: 2px;
-  border-color: var(--main-text-color);
-  padding: 15px 20px 15px 20px;
-  border-radius: 4px;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: 0.3s all ease;
-  margin-top: 20px;
-  margin-right: 20px;
-  width: fit-content;
+.dataRowLarge {
+  margin-bottom: 0.5em;
+  text-align: left;
+  font-size: 1.1em;
+  display: flex;
+  flex-direction: row;
 }
 
-.quickLink:hover {
-  color: white;
-  background: rgba(12, 5, 54, 0.4);
-  border-color: white;
-  text-decoration: none;
+.dataRowTitle {
+  margin-bottom: 0.2em;
+  text-align: left;
+  font-size: 1.1em;
+  display: flex;
+  flex-direction: row;
 }
 
-.topMenu:visited,
-.topMenu:link,
-.topMenu:active {
-  font-size: var(--font-menu);
-  color: var(--main-text-color);
-  padding: 0.5em;
-  margin: 0.4em;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: 0.3s all ease;
+.legendText {
+  color: var(--color-text-dim);
+  font-size: var(--font-legend);
+  font-style: italic;
+  font-weight: 500;
 }
 
-.topMenu:hover {
-  color: #ffffff;
-  background: var(--footer-color);
-  text-decoration: none;
+.accentText {
+  color: var(--color-text-accent);
+  font-weight: 500;
 }
 
-.activeMenu {
-  color: #ffffff;
-  background: var(--footer-color);
-  font-size: var(--font-menu);
-  padding: 0.5em;
-  margin: 0.4em;
-  border-radius: 4px;
+.accentTextFlex {
+  color: var(--color-text-accent);
+  display: inline-block;
+  font-weight: 500;
+  margin-bottom: 0.3em;
+  flex: 1;
+}
+
+.accentTextFixed {
+  color: var(--color-text-accent);
+  display: inline-block;
+  font-weight: 500;
+  min-width: 10em;
+}
+
+.dimText {
+  color: var(--color-text-dim);
+  font-weight: 500;
+}
+
+.dimTextFixed {
+  color: var(--color-text-dim);
+  font-weight: 500;
+  display: inline-block;
+  min-width: 10em;
+}
+
+.linkText {
+  color: var(--color-text-link);
   text-decoration: none;
-  pointer-events: none;
+  flex: 1;
+}
+
+.linkTextHighlight {
+  color: var(--color-text-accent);
+  font-weight: 500;
+  text-decoration: none;
   cursor: default;
+  flex: 1;
+}
+
+.textbox {
+  max-width: 400px;
+}
+
+.textboxLarge {
+  max-width: 760px;
+}
+
+.curriculum {
+  max-width: 760px;
 }
 
 .modalTriggerContainer {
@@ -162,107 +289,6 @@ body {
   margin-bottom: 40px;
 }
 
-.modalTriggerContainerNoMargin {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 0px;
-  margin-bottom: 40px;
-}
-
-.modalTriggerContainerSmall {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  margin-top: 20px;
-  margin-bottom: 40px;
-}
-
-.modalTriggerContainerSmallNoMargin {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  margin-top: 0px;
-  margin-bottom: 40px;
-}
-
-.title {
-  margin-top: 20px;
-  margin-bottom: 40px;
-  text-align: center;
-  font-size: var(--font-title);
-  color: #ffffff;
-  filter: drop-shadow(0px 0px 8px var(--main-text-color));
-}
-
-.description {
-  max-width: 75%;
-  margin-bottom: 40px;
-  line-height: 1.5em;
-  text-align: left;
-  font-size: var(--font-description);
-}
-
-.celTitle {
-  color: #ffffff;
-  filter: drop-shadow(0px 0px 8px var(--main-text-color));
-  text-align: left;
-  font-size: var(--font-title);
-  margin-bottom: 20px;
-}
-
-.cellDescription {
-  line-height: 1.5em;
-  text-align: left;
-  font-size: var(--font-description);
-  filter: drop-shadow(0px 2px 2px var(--bg-color));
-}
-
-.landingBox {
-  background-color: rgba(0, 0, 0, 0.3);
-  padding: 2em;
-  border-radius: 1em;
-  filter: drop-shadow(0px 2px 2px var(--bg-color));
-}
-
-.landingTitle {
-  color: #ffffff;
-  filter: drop-shadow(0px 0px 8px var(--main-text-color));
-  text-align: left;
-  font-size: var(--font-title);
-  margin-bottom: 20px;
-}
-
-.landingDescription {
-  line-height: 1.5em;
-  text-align: left;
-  font-size: var(--font-description);
-}
-
-.imageCellContainer {
-  display: flex;
-  flex-direction: column;
-  width: 30%;
-}
-
-.imageCell {
-  display: block;
-  height: auto;
-  object-fit: contain;
-}
-
-.mainCell {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-}
-
-.textCell {
-  width: 65%;
-  display: flex;
-  flex-direction: column;
-}
-
 .scrollToTop {
   display: flex;
   position: fixed;
@@ -271,31 +297,25 @@ body {
   height: 50px;
   bottom: 20px;
   right: 30px;
-  z-index: 99;
+  z-index: 98;
   border: none;
   outline: none;
-  background-color: rgba(0, 0, 0, 0.3);
   cursor: default;
-  padding: 5px;
-  border-radius: 10px;
   opacity: 0;
   transition: 0.6s all ease;
 }
 
 .scrollToTop.active {
   cursor: pointer;
-  opacity: 1;
+  opacity: 0.5;
 }
 
 .scrollToTop.active:hover {
   opacity: 1;
-  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .footer {
-  font-family: 'Roboto', sans-serif;
-  justify-content: center;
-  background: var(--footer-color);
+  text-align: center;
   font-size: var(--font-footer);
   padding-left: 20px;
   padding-right: 20px;
@@ -304,69 +324,76 @@ body {
   border-radius: 4px;
 }
 
+.card:hover {
+  opacity: 1;
+  transform: scale(1.05) rotate(1deg);
+  --card-opacity: 1;
+}
+
 @media only screen and (max-width: 1000px) {
 
-  .wrapper-cel,
-  .wrapper-cel-reverse {
-    flex-direction: column-reverse;
-    min-height: auto;
-  }
-
-  .wrapper-quicklinks {
-    flex-direction: column;
-  }
-
-  .celTitle {
-    text-align: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
-
-  .landingTitle {
-    text-align: center;
-  }
-
-  .imageCellContainer {
+  .bg-wrapper,
+  .bg-wrapper-reverse {
+    padding: 20px;
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    width: 25vh;
-    height: 25vh;
-    margin-top: 20px;
-    margin-bottom: 20px;
   }
 
-  .description {
-    max-width: 100%;
-  }
-
-  .mainCell {
+  .card-wrapper {
+    padding: 20px;
     display: flex;
+    justify-content: center;
     flex-direction: column;
+    width: auto;
+    height: auto;
+  }
+
+  .cardTitle {
+    font-size: var(--font-card-large);
+  }
+
+  .homeImage {
     width: 100%;
+    max-width: 500px;
   }
 
-  .textCell {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .modalTriggerContainer,
-  .modalTriggerContainerNoMargin,
-  .modalTriggerContainerSmall,
-  .modalTriggerContainerSmallNoMargin {
+  .modalTriggerContainer {
     flex-direction: column;
     margin-top: 0px;
     margin-bottom: 0px;
   }
 
-  .quickLink:visited,
-  .quickLink:link,
-  .quickLink:active {
-    width: auto;
-    margin-left: 0;
-    margin-right: 0;
-    text-align: center;
+  .textbox,
+  .textboxLarge {
+    max-width: 900px;
+    padding: 20px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  :root {
+    --font-footer: 0.7em;
+    --font-title: 1.0em;
+    --font-title-large: 1.1em;
+    --font-description: 0.9em;
   }
 
+  .dataRow {
+    margin-bottom: 0.5em;
+  }
+
+  .accentTextFixed {
+    min-width: 10em;
+  }
+
+  .dimTextFixed {
+    min-width: 10em;
+  }
+
+  .textbox,
+  .textboxLarge {
+    max-width: 900px;
+    padding: 20px;
+  }
 }

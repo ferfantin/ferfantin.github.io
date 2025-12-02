@@ -1,37 +1,42 @@
-.preloader{
-    height: 100vh;
+.preloader {
+    height: 110vh;
+    margin-top: -5em;
     width: 100%;
-    background-color: var(--bg-color);
+    background: var(--color-bg);
+    background: linear-gradient(to bottom, #0d1129c2 0%, #49316b 100%);
     align-items: center;
     display: flex;
     justify-content: center;
     flex-direction: column;
     position: fixed;
-    z-index: 9999;
+    z-index: 100;
     opacity: 1;
-  }
-.preloader-fadeout
-{
+}
+
+.preloader-fadeout {
     animation-name: fadeout;
     animation-delay: 1s;
     animation-duration: 0.6s;
     pointer-events: none;
     animation-fill-mode: forwards;
 }
-.preloader-image
-{
+
+.preloader-image {
     animation-name: fadein;
     animation-duration: 0.6s;
 }
-  @keyframes fadeout {
-    0%{
+
+@keyframes fadeout {
+    0% {
         opacity: 1;
     }
-    99%{
+
+    99% {
         opacity: 0;
     }
-    100%{
+
+    100% {
         opacity: 0;
         display: none;
     }
-  }
+}

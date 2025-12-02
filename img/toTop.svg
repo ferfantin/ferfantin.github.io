@@ -1,14 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="90" height="92.84" viewBox="0 0 90 92.84">
-  <defs>
-    <filter id="Path_7" x="0" y="0" width="90" height="92.84" filterUnits="userSpaceOnUse">
-      <feOffset input="SourceAlpha"/>
-      <feGaussianBlur stdDeviation="10" result="blur"/>
-      <feFlood flood-color="#09f"/>
-      <feComposite operator="in" in2="blur"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-  </defs>
-  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Path_7)">
-    <path id="Path_7-2" data-name="Path 7" d="M15,9.16,30,42,15,32.46,0,42Z" transform="translate(30 20.84)" fill="#fff"/>
-  </g>
+<svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_dg_2013_54)">
+<path d="M43.8309 32.4036C44.3053 31.4284 45.6947 31.4284 46.1691 32.4036L58.3973 57.5449C58.8427 58.4605 57.7312 59.4846 56.8272 59.016C53.843 57.4693 49.2158 55.5 45 55.5C40.7842 55.5 36.157 57.4693 33.1728 59.016C32.2688 59.4846 31.1573 58.4605 31.6027 57.5449L43.8309 32.4036Z" fill="#E9D8B9"/>
+</g>
+<defs>
+<filter id="filter0_dg_2013_54" x="24.502" y="24.6721" width="40.9961" height="41.4614" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="3.5"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2013_54"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2013_54" result="shape"/>
+<feTurbulence type="fractalNoise" baseFrequency="0.1428571492433548 0.1428571492433548" numOctaves="3" seed="1894" />
+<feDisplacementMap in="shape" scale="1" xChannelSelector="R" yChannelSelector="G" result="displacedImage" width="100%" height="100%" />
+<feMerge result="effect2_texture_2013_54">
+<feMergeNode in="displacedImage"/>
+</feMerge>
+</filter>
+</defs>
 </svg>

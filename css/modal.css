@@ -1,25 +1,45 @@
 .modaltrigger {
   display: flex;
-  width: 30%;
-  border-radius: 5px;
-  border-width: 2px;
-  border-style: none;
+  width: 31%;
+  border-radius: 4px;
+  border-style: transparent;
+  box-shadow: 0px 2px 24px var(--color-modal-shadow);
   cursor: pointer;
-  transition: 0.3s;
   object-fit: cover;
   opacity: 1;
+  transition: 0.3s;
 }
 
-.modaltriggerOutline {
+.modaltriggerMedium {
   display: flex;
-  width: 30%;
-  border-radius: 5px;
-  border-width: 2px;
-  border-style: solid;
+  width: 48%;
+  border-radius: 4px;
+  border-style: transparent;
+  box-shadow: 0px 2px 24px var(--color-modal-shadow);
   cursor: pointer;
-  transition: 0.3s;
   object-fit: cover;
   opacity: 1;
+  transition: 0.3s;
+}
+
+.modaltriggerLarge {
+  display: flex;
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+  object-fit: cover;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.modalempty {
+  display: flex;
+  width: 28%;
+  border-width: 2px;
+  border-style: solid;
+  margin-bottom: 4%;
+  padding: 1%;
+  opacity: 0;
 }
 
 .modaltriggerSquare {
@@ -32,38 +52,58 @@
   transition: 0.3s;
   object-fit: cover;
   opacity: 1;
-  aspect-ratio: 1/1;
-}
-
-.leftStart{
-  object-position: center left;
-}
-
-.rightStart{
-  object-position: center right;
 }
 
 .modaltriggerVideo {
   display: flex;
   width: 30%;
   border-radius: 5px;
-  border-width: 2px;
-  border-style: none;
+  border-style: transparent;
+  box-shadow: 0px 2px 24px var(--color-modal-shadow);
   cursor: pointer;
   transition: 0.3s;
   object-fit: cover;
   opacity: 1;
 }
 
+.modaltriggerVideoMedium {
+  display: flex;
+  width: 48%;
+  border-radius: 5px;
+  border-style: transparent;
+  box-shadow: 0px 2px 24px var(--color-modal-shadow);
+  cursor: pointer;
+  transition: 0.3s;
+  object-fit: cover;
+  opacity: 1;
+}
+
+.modaltriggerVideoLarge {
+  display: flex;
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+  object-fit: cover;
+  opacity: 1;
+  transition: 0.3s;
+}
 
 .modaltrigger:hover {
   opacity: 1;
   transform: scale(1.05);
+  border-color: var(--color-text-link);
 }
 
-.modaltriggerOutline:hover {
+.modaltriggerMedium:hover {
   opacity: 1;
-  transform: scale(1.05);
+  transform: scale(1.03);
+  border-color: var(--color-text-link);
+}
+
+.modaltriggerLarge:hover {
+  opacity: 1;
+  transform: scale(1.02);
+  box-shadow: 0px 2px 24px var(--color-modal-shadow);
 }
 
 .modaltriggerSquare:hover {
@@ -76,13 +116,23 @@
   transform: scale(1.05);
 }
 
+.modaltriggerVideoMedium:hover {
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+.modaltriggerVideoLarge:hover {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
 /* The Modal (background) */
 .modal {
   display: none;
   flex-direction: column;
   position: fixed;
   align-items: center;
-  z-index: 1;
+  z-index: 99;
   left: 0;
   top: 0;
   margin: auto;
@@ -127,6 +177,7 @@
 
 /* Add Animation - Zoom in the Modal */
 .modal-content,
+.modal-content-video,
 #caption {
   animation-name: zoom;
   animation-duration: 0.3s;
@@ -183,10 +234,13 @@
   }
 
   .modaltrigger,
-  .modaltriggerOutline,
+  .modaltriggerMedium,
   .modaltriggerSquare,
-  .modaltriggerVideo {
+  .modaltriggerVideo,
+  .modaltriggerVideoMedium {
     margin-top: 2vh;
     width: 100%;
+    margin: -1%;
+    margin-bottom: 4%;
   }
 }
