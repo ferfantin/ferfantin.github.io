@@ -26,10 +26,12 @@
 
 #particles-js {
   width: 100%;
+  height: 100%;
   position: fixed;
   z-index: -10;
   top: 0;
   left: 0;
+  background: linear-gradient(to bottom, var(--color-bg) 0%, var(--color-bg-bright) 100%);
 }
 
 body {
@@ -38,7 +40,7 @@ body {
   font-weight: 500;
   font-size: var(--font-description);
   color: var(--color-text-white);
-  background: linear-gradient(to bottom, var(--color-bg) 0%, var(--color-bg-bright) 100%);
+  background-color: var(--color-bg);
   background-attachment: fixed;
   text-align: -webkit-center;
   text-align: -moz-center;
