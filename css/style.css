@@ -16,8 +16,7 @@
 
   --font-legend: 0.75em;
   --font-footer: 0.8em;
-  --font-title: 1.6em;
-  --font-title-large: 1.8em;
+  --font-title: 1.8em;
   --font-description: 1.0em;
 
   --card-opacity: 0.7;
@@ -37,7 +36,7 @@
 body {
   font-family: "DM Mono", monospace;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   font-size: var(--font-description);
   color: var(--color-text-white);
   background-color: var(--color-bg);
@@ -48,9 +47,15 @@ body {
   padding-top: 3.5em;
 }
 
+.imageSelf {
+  width: 80%;
+  object-fit: contain;
+  margin-top: -6%;
+  margin-right: -15%;
+}
+
 .imageStandard {
-  display: flex;
-  width: 40%;
+  width: 100%;
   border-radius: 10px;
   border-style: transparent;
   box-shadow: 0px 2px 24px var(--color-modal-shadow);
@@ -58,22 +63,7 @@ body {
 }
 
 .imageContain {
-  width: auto;
-  height: auto;
-  object-fit: contain;
-}
-
-.landingBG {
-  height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-image: url("../img/Fernanda/Fer-Darkness.jpg");
-  background-attachment: scroll;
-  background-position: left;
-  background-repeat: no-repeat;
-  background-size: cover;
+  max-width: 45%;
 }
 
 .card {
@@ -113,14 +103,14 @@ body {
 }
 
 .bg-wrapper {
-  max-width: 760px;
+  max-width: 920px;
   padding: 40px;
   display: flex;
   justify-content: space-between;
 }
 
 .bg-wrapper-reverse {
-  max-width: 760px;
+  max-width: 920px;
   padding: 40px;
   display: flex;
   justify-content: space-between;
@@ -269,16 +259,14 @@ body {
 }
 
 .textbox {
-  max-width: 400px;
+  max-width: 440px;
 }
 
 .textboxLarge {
-  max-width: 760px;
+  max-width: 100%;
 }
 
-.curriculum {
-  max-width: 760px;
-}
+
 
 .modalTriggerContainer {
   display: flex;
@@ -350,9 +338,14 @@ body {
     height: auto;
   }
 
-  .imageStandard {
-    display: flex;
-    width: auto;
+  .imageSelf {
+    width: 100%;
+    object-fit: cover;
+    margin: 0;
+  }
+
+  .imageContain {
+    max-width: 100%;
   }
 
   .modalTriggerContainer {
