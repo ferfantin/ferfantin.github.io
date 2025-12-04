@@ -152,17 +152,8 @@ body {
 
 .title {
   font-family: "New Rocker", system-ui;
-  text-align: center;
+  text-align: left;
   font-size: var(--font-title);
-  color: var(--color-text-title);
-  font-weight: 500;
-}
-
-.titleBig {
-  font-family: "New Rocker", system-ui;
-  margin-bottom: 1.0em;
-  text-align: center;
-  font-size: var(--font-title-large);
   color: var(--color-text-title);
   font-weight: 500;
 }
