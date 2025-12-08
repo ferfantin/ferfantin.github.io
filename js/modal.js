@@ -2,6 +2,7 @@ var modal = document.getElementById("myModal");
 
 // Get the image and insert it inside the modal - use its "alt" text as a caption
 var modalTriggers = document.getElementsByClassName("modaltrigger")
+var modalTriggersFlex = document.getElementsByClassName("modaltriggerFlex")
 var modalTriggersAlt = document.getElementsByClassName("modaltriggerAlt")
 var modalTriggersSquare = document.getElementsByClassName("modaltriggerSquare")
 var modalTriggersVideo = document.getElementsByClassName("modaltriggerVideo")
@@ -33,6 +34,16 @@ for (var index = 0; index < modalTriggersAlt.length; index++) {
 
 for (var index = 0; index < modalTriggersSquare.length; index++) {
   modalTriggersSquare[index].onclick = function () {
+    modal.style.display = "flex";
+    modalImg.src = this.src;
+    modalImg.style.display = "block"
+    modalVideo.style.display = "none"
+    mybutton.classList.remove("active")
+  }
+}
+
+for (var index = 0; index < modalTriggersFlex.length; index++) {
+  modalTriggersFlex[index].onclick = function () {
     modal.style.display = "flex";
     modalImg.src = this.src;
     modalImg.style.display = "block"

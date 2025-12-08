@@ -150,6 +150,15 @@ body {
   row-gap: 2em;
 }
 
+.modal-wrapper-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  row-gap: 2em;
+  column-count: 3;
+}
+
 .title {
   font-family: "New Rocker", system-ui;
   text-align: left;
