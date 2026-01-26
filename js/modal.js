@@ -20,6 +20,7 @@ for (var _index = 0; _index < modalTriggers.length; _index++) {
       modalImg.style.display = "block"
       modalVideo.style.display = "none"
     }
+    index = Array.prototype.indexOf.call(modalTriggers, this);
     mybutton.classList.remove("active");
   }
 }
