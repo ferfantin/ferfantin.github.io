@@ -1,108 +1,74 @@
 var modal = document.getElementById("myModal");
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var modalTriggers = document.getElementsByClassName("modaltrigger")
-var modalTriggersFlex = document.getElementsByClassName("modaltriggerFlex")
-var modalTriggersAlt = document.getElementsByClassName("modaltriggerAlt")
-var modalTriggersSquare = document.getElementsByClassName("modaltriggerSquare")
-var modalTriggersVideo = document.getElementsByClassName("modaltriggerVideo")
-var modalTriggersVideoMedium = document.getElementsByClassName("modaltriggerVideoMedium")
-var modalTriggersVideoLarge = document.getElementsByClassName("modaltriggerVideoLarge")
-var modalTriggersMedium = document.getElementsByClassName("modaltriggerMedium")
-var modalTriggersLarge = document.getElementsByClassName("modaltriggerLarge")
+var next = document.getElementById("modalNext");
+var back = document.getElementById("modalBack");
+var close = document.getElementById("modalClose");
 var modalImg = document.getElementById("modalImg");
 var modalVideo = document.getElementById("modalVideo");
+var modalTriggers = document.getElementsByName("modal");
+var index = 0;
 
-for (var index = 0; index < modalTriggers.length; index++) {
-  modalTriggers[index].onclick = function () {
+for (var _index = 0; _index < modalTriggers.length; _index++) {
+  modalTriggers[_index].onclick = function () {
     modal.style.display = "flex";
-    modalImg.src = this.src;
-    modalImg.style.display = "block"
-    modalVideo.style.display = "none"
-    mybutton.classList.remove("active");
-  }
-}
-for (var index = 0; index < modalTriggersAlt.length; index++) {
-  modalTriggersAlt[index].onclick = function () {
-    modal.style.display = "flex";
-    modalImg.src = this.src;
-    modalImg.style.display = "block"
-    modalVideo.style.display = "none"
-    mybutton.classList.remove("active");
-  }
-}
-
-for (var index = 0; index < modalTriggersSquare.length; index++) {
-  modalTriggersSquare[index].onclick = function () {
-    modal.style.display = "flex";
-    modalImg.src = this.src;
-    modalImg.style.display = "block"
-    modalVideo.style.display = "none"
-    mybutton.classList.remove("active")
-  }
-}
-
-for (var index = 0; index < modalTriggersFlex.length; index++) {
-  modalTriggersFlex[index].onclick = function () {
-    modal.style.display = "flex";
-    modalImg.src = this.src;
-    modalImg.style.display = "block"
-    modalVideo.style.display = "none"
-    mybutton.classList.remove("active")
-  }
-}
-
-for (var index = 0; index < modalTriggersVideo.length; index++) {
-  modalTriggersVideo[index].onclick = function () {
-    modal.style.display = "flex";
-    modalVideo.src = this.firstElementChild.src;
-    modalImg.style.display = "none"
-    modalVideo.style.display = "block"
+    if (this.tagName == "VIDEO") {
+      modalVideo.src = this.firstElementChild.src;
+      modalImg.style.display = "none"
+      modalVideo.style.display = "block"
+    }
+    else if (this.tagName == "IMG") {
+      modalImg.src = this.src;
+      modalImg.style.display = "block"
+      modalVideo.style.display = "none"
+    }
     mybutton.classList.remove("active");
   }
 }
 
-for (var index = 0; index < modalTriggersVideoLarge.length; index++) {
-  modalTriggersVideoLarge[index].onclick = function () {
-    modal.style.display = "flex";
-    modalVideo.src = this.firstElementChild.src;
-    modalImg.style.display = "none"
-    modalVideo.style.display = "block"
-    mybutton.classList.remove("active");
-  }
-}
-
-for (var index = 0; index < modalTriggersVideoMedium.length; index++) {
-  modalTriggersVideoMedium[index].onclick = function () {
-    modal.style.display = "flex";
-    modalVideo.src = this.firstElementChild.src;
-    modalImg.style.display = "none"
-    modalVideo.style.display = "block"
-    mybutton.classList.remove("active");
-  }
-}
-
-for (var index = 0; index < modalTriggersLarge.length; index++) {
-  modalTriggersLarge[index].onclick = function () {
-    modal.style.display = "flex";
-    modalImg.src = this.src;
-    modalImg.style.display = "block"
-    modalVideo.style.display = "none"
-    mybutton.classList.remove("active");
-  }
-}
-
-for (var index = 0; index < modalTriggersMedium.length; index++) {
-  modalTriggersMedium[index].onclick = function () {
-    modal.style.display = "flex";
-    modalImg.src = this.src;
-    modalImg.style.display = "block"
-    modalVideo.style.display = "none"
-    mybutton.classList.remove("active");
-  }
-}
-
-modal.onclick = function () {
+modalImg.onclick = function () {
   modal.style.display = "none";
   mybutton.classList.add("active");
+}
+
+modalVideo.onclick = function () {
+  modal.style.display = "none";
+  mybutton.classList.add("active");
+}
+
+modalClose.onclick = function () {
+  modal.style.display = "none";
+  mybutton.classList.add("active");
+}
+
+next.onclick = function () {
+  index += 1;
+  if (index >= modalTriggers.length - 1) {
+    index = 0;
+  }
+  if (modalTriggers[index].tagName == "VIDEO") {
+    modalVideo.src = modalTriggers[index].firstElementChild.src;
+    modalImg.style.display = "none"
+    modalVideo.style.display = "block"
+  }
+  else if (modalTriggers[index].tagName == "IMG") {
+    modalImg.src = modalTriggers[index].src;
+    modalImg.style.display = "block"
+    modalVideo.style.display = "none"
+  }
+}
+
+back.onclick = function () {
+  index -= 1;
+  if (index < 0) {
+    index = modalTriggers.length - 1;
+  }
+  if (modalTriggers[index].tagName == "VIDEO") {
+    modalVideo.src = modalTriggers[index].firstElementChild.src;
+    modalImg.style.display = "none"
+    modalVideo.style.display = "block"
+  }
+  else if (modalTriggers[index].tagName == "IMG") {
+    modalImg.src = modalTriggers[index].src;
+    modalImg.style.display = "block"
+    modalVideo.style.display = "none"
+  }
 }
