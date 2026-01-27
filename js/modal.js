@@ -42,7 +42,7 @@ modalClose.onclick = function () {
 
 next.onclick = function () {
   index += 1;
-  if (index >= modalTriggers.length - 1) {
+  if (index >= modalTriggers.length) {
     index = 0;
   }
   if (modalTriggers[index].tagName == "VIDEO") {
