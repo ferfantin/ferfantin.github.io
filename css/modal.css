@@ -328,4 +328,8 @@
   .modalempty {
     display: none;
   }
+
+  ::-webkit-media-controls {
+  display:none !important;
+}
 }
