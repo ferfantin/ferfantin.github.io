@@ -25,14 +25,12 @@ for (var _index = 0; _index < modalTriggers.length; _index++) {
   }
 }
 
-modalImg.onclick = function () {
-  modal.style.display = "none";
-  mybutton.classList.add("active");
-}
-
-modalVideo.onclick = function () {
-  modal.style.display = "none";
-  mybutton.classList.add("active");
+modal.onclick = function () {
+  if(window.innerWidth<="1000")
+  {
+    modal.style.display = "none";
+    mybutton.classList.add("active");
+  }
 }
 
 modalClose.onclick = function () {

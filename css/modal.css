@@ -217,7 +217,7 @@
   align-self: center;
   margin: auto;
   display: none;
-  height: 80%;
+  width: 80%;
   max-width: 1920px;
   border-radius: 10px;
 }
@@ -226,7 +226,7 @@
   align-self: center;
   margin: auto;
   display: none;
-  height: 80%;
+  width: 80%;
   max-width: 1920px;
   border-radius: 10px;
 }
@@ -297,8 +297,10 @@
 
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 1000px) {
-  .modal-content {
-    width: 100%;
+  .modal-content,
+  .modal-content-video {
+    width: 95%;
+    border-radius: 0;
     height: auto;
   }
 
