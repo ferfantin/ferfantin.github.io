@@ -217,8 +217,8 @@
   align-self: center;
   margin: auto;
   display: none;
-  width: 80%;
-  max-width: 1920px;
+  max-height: 90%;
+  max-width: 80%;
   border-radius: 10px;
 }
 
@@ -226,8 +226,8 @@
   align-self: center;
   margin: auto;
   display: none;
-  width: 80%;
-  max-width: 1920px;
+  max-height: 90%;
+  max-width: 80%;
   border-radius: 10px;
 }
 
@@ -299,7 +299,8 @@
 @media only screen and (max-width: 1000px) {
   .modal-content,
   .modal-content-video {
-    width: 95%;
+    max-width: 90%;
+    max-height: 90%;
     border-radius: 0;
     height: auto;
   }
